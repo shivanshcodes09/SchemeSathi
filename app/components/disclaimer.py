@@ -5,12 +5,13 @@ SchemeSathi - Freshness & Provenance Disclaimer Component
 import streamlit as st
 
 def render_disclaimer():
-    """Renders data freshness banner and informational notice."""
-    st.info(
-        "💡 **Data Provenance & Freshness Notice:** Scheme knowledge base contains **4,693 government schemes** "
-        "sourced from official [myScheme.gov.in](https://myscheme.gov.in) (Ministry of Electronics and Information Technology, GoI). "
-        "Scheme rules, funding quotas, and application deadlines may be updated by nodal ministries; "
-        "always verify current guidelines on the official portal before applying.",
-        icon="ℹ️"
-    )
-
+    """Renders a sleek, minimal provenance notice."""
+    with st.expander("ℹ️ Official Data Source: 4,693 Verified Schemes (myScheme.gov.in)", expanded=False):
+        st.markdown(
+            """
+            - **Source**: Directly indexed from official [myScheme.gov.in](https://myscheme.gov.in) 
+              (National Portal by Ministry of Electronics & IT, Government of India).
+            - **Notice**: Eligibility rules, financial allocations, and application deadlines are managed by nodal ministries. 
+              Always verify active guidelines on the official portal links provided before applying.
+            """
+        )

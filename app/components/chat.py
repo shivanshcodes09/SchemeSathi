@@ -1,27 +1,50 @@
 """
-SchemeSathi - Interactive Chat & Natural Language Query Component
+SchemeSathi - Interactive Chat & Suggested Query Component
 """
 
 import streamlit as st
-from typing import Dict, Any, List
+from typing import Optional
 
-SUGGESTED_QUERIES = [
-    "🎓 Scholarships for college and undergraduate degree students",
-    "👧 Best financial assistance schemes for girl students",
-    "💼 Post-Matric scholarships for family income below 2.5 Lakh",
-    "🔬 Higher education and PhD research fellowship schemes",
-    "🚜 Welfare and fee reimbursement schemes for SC/ST/OBC students"
+SUGGESTED_TOPICS = [
+    {
+        "icon": "👩‍🎓",
+        "title": "Girl Student Grants",
+        "query": "What are the best scholarships and financial assistance schemes for girl students?"
+    },
+    {
+        "icon": "🎓",
+        "title": "College & Undergrad",
+        "query": "Scholarships, fee waivers, and maintenance grants for college and undergraduate degree students."
+    },
+    {
+        "icon": "💰",
+        "title": "Income < ₹2.5 Lakh",
+        "query": "Post-matric and pre-matric scholarships for students from families with annual income below 2.5 Lakh."
+    },
+    {
+        "icon": "🔬",
+        "title": "PhD & Research",
+        "query": "Higher education fellowships and national research grants for PhD, MPhil, and postgraduate scholars."
+    },
+    {
+        "icon": "🏛️",
+        "title": "SC/ST/OBC Grants",
+        "query": "Tuition fee reimbursement and welfare scholarship schemes for SC, ST, and OBC category students."
+    }
 ]
 
-def render_quick_queries():
-    """Renders one-click pill buttons for popular scholarship inquiries."""
-    st.markdown("##### 💡 Popular Questions")
-    cols = st.columns(len(SUGGESTED_QUERIES))
-    for idx, prompt in enumerate(SUGGESTED_QUERIES):
+def render_quick_queries() -> Optional[str]:
+    """Renders sleek one-click pill buttons for popular inquiries."""
+    st.markdown(
+        "<div style='font-size: 0.85rem; font-weight: 600; color: #64748B; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;'>"
+        "💡 Quick Explorations"
+        "</div>",
+        unsafe_allow_html=True
+    )
+    cols = st.columns(len(SUGGESTED_TOPICS))
+    for idx, item in enumerate(SUGGESTED_TOPICS):
         with cols[idx]:
-            # Clean label for button
-            label = prompt.split(" ")[0] + " " + " ".join(prompt.split(" ")[1:3])
-            if st.button(label, key=f"quick_btn_{idx}", use_container_width=True, help=prompt):
-                return prompt
+            button_label = f"{item['icon']} {item['title']}"
+            if st.button(button_label, key=f"quick_pill_{idx}", use_container_width=True, help=item["query"]):
+                return item["query"]
     return None
-

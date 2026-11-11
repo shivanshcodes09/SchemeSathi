@@ -1,6 +1,6 @@
 """
 SchemeSathi - Sidebar Profile Component
-Renders the 8-dimension user profile filter in Streamlit.
+Renders the 8-dimension user profile filter in Streamlit with modern, minimal styling.
 """
 
 from typing import Dict, Any
@@ -50,36 +50,31 @@ CATEGORIES = [
 def render_sidebar() -> Dict[str, Any]:
     """Renders user profile controls in the sidebar and returns profile dict."""
     with st.sidebar:
-        st.markdown("## 👤 Your Profile & Eligibility")
-        st.caption("Filters are applied automatically to find verified matching schemes.")
-        
-        # 1. State / UT Selection
+        st.markdown(
+            "<div style='margin-bottom: 0.8rem;'>"
+            "<div style='font-size: 1.25rem; font-weight: 700; color: #0F172A;'>👤 Eligibility Profile</div>"
+            "<div style='font-size: 0.82rem; color: #64748B;'>Set your profile to filter 4,690+ schemes instantly.</div>"
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+        # 1. State / Domicile
         state = st.selectbox(
-            "📍 State / Union Territory",
+            "📍 State of Domicile",
             options=STATES_LIST,
             index=0,
-            help="Select your state of domicile. 'All India' includes all Central Government schemes."
+            help="Select your state. 'All India' includes all Central Government schemes."
         )
 
         # 2. Education Level
         education = st.selectbox(
-            "🎓 Current Education Level",
+            "🎓 Education Level",
             options=EDUCATION_LEVELS,
             index=0,
             help="Select your ongoing or completed education stage."
         )
 
-        # 3. Family Annual Income
-        income_choice = st.selectbox(
-            "💰 Annual Family Income",
-            options=[b[0] for b in INCOME_BRACKETS],
-            index=0,
-            help="Many scholarships have family income ceilings (e.g. 2.5 Lakh)."
-        )
-        # Map choice to integer
-        income_val = next((val for label, val in INCOME_BRACKETS if label == income_choice), None)
-
-        # 4. Caste / Social Category
+        # 3. Caste / Social Category
         cat_choice = st.selectbox(
             "🏷️ Social Category",
             options=CATEGORIES,
@@ -90,52 +85,70 @@ def render_sidebar() -> Dict[str, Any]:
         if cat_clean == "All":
             cat_clean = "General"
 
-        # 5. Gender
-        gender = st.radio(
-            "⚧ Gender",
-            options=["All / Any", "Female", "Male"],
+        # 4. Family Annual Income
+        income_choice = st.selectbox(
+            "💰 Annual Family Income",
+            options=[b[0] for b in INCOME_BRACKETS],
             index=0,
-            horizontal=True,
-            help="Many high-value scholarships are dedicated to girl students."
+            help="Many scholarships require family income below ₹2.5L or ₹8.0L."
         )
-        gender_clean = "all" if "All" in gender else gender.lower()
+        income_val = next((val for label, val in INCOME_BRACKETS if label == income_choice), None)
 
-        # 6. Area / Residence
-        residence = st.radio(
-            "🏡 Residence Type",
-            options=["Both / Any", "Rural", "Urban"],
-            index=0,
-            horizontal=True
+        # 5. Gender & Residence in neat compact columns
+        col_g, col_r = st.columns(2)
+        with col_g:
+            gender = st.selectbox(
+                "⚧ Gender",
+                options=["All / Any", "Female", "Male"],
+                index=0,
+                help="Many high-value scholarships are dedicated to girl students."
+            )
+            gender_clean = "all" if "All" in gender else gender.lower()
+
+        with col_r:
+            residence = st.selectbox(
+                "🏡 Area",
+                options=["Both / Any", "Rural", "Urban"],
+                index=0
+            )
+            residence_clean = "both" if "Both" in residence else residence.lower()
+
+        st.markdown("<div style='height: 6px;'></div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div style='font-size: 0.8rem; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em;'>"
+            "Special Status"
+            "</div>",
+            unsafe_allow_html=True
         )
-        residence_clean = "both" if "Both" in residence else residence.lower()
 
-        st.markdown("---")
-        st.markdown("##### 📌 Special Status")
-
-        # 7. BPL
+        # 6. BPL & PwD checkboxes
         has_bpl = st.checkbox(
-            "BPL / Antyodaya Ration Card Holder",
+            "BPL / Antyodaya Ration Card",
             value=False,
             help="Unlocks schemes exclusively reserved for Below Poverty Line families."
         )
 
-        # 8. Disability
         has_disability = st.checkbox(
             "Person with Disability (PwD ≥ 40%)",
             value=False,
-            help="Unlocks disability reservations and specialized assistive device grants."
+            help="Unlocks disability reservations and assistive device grants."
         )
 
-        st.markdown("---")
-        # Settings expander for API Key
-        with st.expander("⚙️ Advanced Settings / API Key"):
+        # Reset chat session button in sidebar
+        st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
+        if st.button("🔄 Reset Chat Session", use_container_width=True):
+            st.session_state.messages = []
+            st.rerun()
+
+        # Advanced Settings Accordion
+        with st.expander("⚙️ Advanced RAG & LLM Settings", expanded=False):
             api_key = st.text_input(
                 "Gemini API Key (optional)",
                 type="password",
                 help="Enter your Gemini key to use LLM generation, or configure GEMINI_API_KEY in .env"
             )
-            use_hybrid = st.checkbox("Enable BM25 + Vector Hybrid Search", value=True)
-            top_k = st.slider("Max Schemes to Display", min_value=3, max_value=15, value=8)
+            use_hybrid = st.checkbox("Hybrid Search (BM25 + Dense Vectors)", value=True)
+            top_k = st.slider("Max Schemes Retrieved", min_value=3, max_value=15, value=8)
 
         profile = {
             "state": state,
@@ -152,4 +165,3 @@ def render_sidebar() -> Dict[str, Any]:
         }
 
         return profile
-
