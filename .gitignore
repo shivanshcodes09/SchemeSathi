@@ -1,0 +1,30 @@
+# Environment & Secrets
+.env
+*.env.local
+.streamlit/secrets.toml
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Raw dataset and large embeddings cache
+data/raw/*.parquet
+data/raw/*.csv
+data/processed/embeddings.npy
+
+# Local Qdrant embedded files (Qdrant Cloud is used in deployment)
+qdrant_storage/
+
+# Logs & temp
+*.log
+logs/
+.DS_Store
+.pytest_cache/
+

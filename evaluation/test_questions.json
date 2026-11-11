@@ -1,0 +1,515 @@
+[
+  {
+    "id": "Q01",
+    "question": "What scholarships are available for SC students pursuing post-matric graduation in Maharashtra?",
+    "profile": {
+      "state": "Maharashtra",
+      "education": "Graduation / Undergraduate",
+      "income": 200000,
+      "category": "SC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["post-matric", "scholarship", "sc"],
+    "test_type": "state_specific_caste"
+  },
+  {
+    "id": "Q02",
+    "question": "Financial assistance for girl students studying in higher secondary or college in Tamil Nadu",
+    "profile": {
+      "state": "Tamil Nadu",
+      "education": "12th Pass / Higher Secondary",
+      "income": 150000,
+      "category": "General",
+      "gender": "female",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["girl", "women", "pudhumai", "scholarship"],
+    "test_type": "girl_child"
+  },
+  {
+    "id": "Q03",
+    "question": "Central government scholarships for OBC students studying in college with family income below 2.5 lakh",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 220000,
+      "category": "OBC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["pm-yasasvi", "obc", "scholarship", "central"],
+    "test_type": "central_obc"
+  },
+  {
+    "id": "Q04",
+    "question": "Scholarship for engineering undergraduate students in Uttar Pradesh with low family income",
+    "profile": {
+      "state": "Uttar Pradesh",
+      "education": "Graduation / Undergraduate",
+      "income": 180000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["scholarship", "fee", "uttar pradesh"],
+    "test_type": "state_specific"
+  },
+  {
+    "id": "Q05",
+    "question": "PhD and doctorate research fellowship schemes in India",
+    "profile": {
+      "state": "All India",
+      "education": "PhD / Research",
+      "income": null,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["fellowship", "research", "phd", "national"],
+    "test_type": "higher_education"
+  },
+  {
+    "id": "Q06",
+    "question": "Education loan interest subsidy or financial support for higher studies abroad",
+    "profile": {
+      "state": "All India",
+      "education": "Post-Graduation",
+      "income": 400000,
+      "category": "OBC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["overseas", "interest", "subsidy", "padho"],
+    "test_type": "overseas_education"
+  },
+  {
+    "id": "Q07",
+    "question": "Scholarships for students with disabilities pursuing degree education",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 300000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": true
+    },
+    "expected_keywords": ["disability", "pwd", "divyang", "scholarship"],
+    "test_type": "disability"
+  },
+  {
+    "id": "Q08",
+    "question": "Post matric scholarship for ST students in Rajasthan",
+    "profile": {
+      "state": "Rajasthan",
+      "education": "Graduation / Undergraduate",
+      "income": 200000,
+      "category": "ST",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["st", "tribal", "post-matric", "rajasthan"],
+    "test_type": "state_st"
+  },
+  {
+    "id": "Q09",
+    "question": "Pre-matric scholarship for minority community students in Class 9 and 10",
+    "profile": {
+      "state": "All India",
+      "education": "10th Pass / Secondary",
+      "income": 100000,
+      "category": "Minority",
+      "gender": "all",
+      "residence": "both",
+      "bpl": true,
+      "disability": false
+    },
+    "expected_keywords": ["minority", "pre-matric", "scholarship"],
+    "test_type": "minority_pre_matric"
+  },
+  {
+    "id": "Q10",
+    "question": "Welfare assistance and laptop or bicycle assistance for students in Gujarat",
+    "profile": {
+      "state": "Gujarat",
+      "education": "12th Pass / Higher Secondary",
+      "income": 120000,
+      "category": "SC",
+      "gender": "female",
+      "residence": "rural",
+      "bpl": true,
+      "disability": false
+    },
+    "expected_keywords": ["gujarat", "sahay", "yojana", "vidyarthi"],
+    "test_type": "state_gujarat"
+  },
+  {
+    "id": "Q11",
+    "question": "Diploma and polytechnic student scholarship in Karnataka",
+    "profile": {
+      "state": "Karnataka",
+      "education": "Diploma / Polytechnic",
+      "income": 250000,
+      "category": "OBC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["karnataka", "polytechnic", "diploma", "vidyasiri"],
+    "test_type": "polytechnic"
+  },
+  {
+    "id": "Q12",
+    "question": "Merit cum means scholarship for professional and technical courses",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 250000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["merit", "means", "technical", "professional"],
+    "test_type": "merit_means"
+  },
+  {
+    "id": "Q13",
+    "question": "Assam state scholarship for students from tea garden communities and backward classes",
+    "profile": {
+      "state": "Assam",
+      "education": "12th Pass / Higher Secondary",
+      "income": 100000,
+      "category": "OBC",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": true,
+      "disability": false
+    },
+    "expected_keywords": ["assam", "scholarship", "tea"],
+    "test_type": "state_assam"
+  },
+  {
+    "id": "Q14",
+    "question": "Free coaching scheme for competitive exams (UPSC, SSC, Banking) for SC/ST students",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 300000,
+      "category": "SC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["coaching", "upsc", "competitive", "dhee"],
+    "test_type": "coaching"
+  },
+  {
+    "id": "Q15",
+    "question": "EWS category scholarship for economically weaker upper caste students in college",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 200000,
+      "category": "EWS",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["ews", "economically", "scholarship", "general"],
+    "test_type": "ews"
+  },
+  {
+    "id": "Q16",
+    "question": "Hostel fee subsidy and boarding grants for college students in Madhya Pradesh",
+    "profile": {
+      "state": "Madhya Pradesh",
+      "education": "Graduation / Undergraduate",
+      "income": 150000,
+      "category": "ST",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["madhya pradesh", "hostel", "awas", "sahayata"],
+    "test_type": "state_mp"
+  },
+  {
+    "id": "Q17",
+    "question": "AICTE Pragati scholarship for girls admitted to degree in engineering",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 500000,
+      "category": "General",
+      "gender": "female",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["pragati", "aicte", "technical", "engineering"],
+    "test_type": "girl_technical"
+  },
+  {
+    "id": "Q18",
+    "question": "Bihar student credit card and post matric scholarship for technical education",
+    "profile": {
+      "state": "Bihar",
+      "education": "Graduation / Undergraduate",
+      "income": 200000,
+      "category": "OBC",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["bihar", "credit card", "scholarship", "yojana"],
+    "test_type": "state_bihar"
+  },
+  {
+    "id": "Q19",
+    "question": "Sports person and athlete scholarship for college students representing national level",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": null,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["sports", "athlete", "khelo", "fellowship"],
+    "test_type": "sports"
+  },
+  {
+    "id": "Q20",
+    "question": "Kerala state higher education scholarship for meritorious students",
+    "profile": {
+      "state": "Kerala",
+      "education": "Graduation / Undergraduate",
+      "income": 100000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": true,
+      "disability": false
+    },
+    "expected_keywords": ["kerala", "scholarship", "higher education"],
+    "test_type": "state_kerala"
+  },
+  {
+    "id": "Q21",
+    "question": "Punjab government post matric scholarship for SC college students",
+    "profile": {
+      "state": "Punjab",
+      "education": "Graduation / Undergraduate",
+      "income": 250000,
+      "category": "SC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["punjab", "post-matric", "sc", "ashirwad"],
+    "test_type": "state_punjab"
+  },
+  {
+    "id": "Q22",
+    "question": "Haryana state meritorious incentive scheme for Class 10 and 12 toppers",
+    "profile": {
+      "state": "Haryana",
+      "education": "12th Pass / Higher Secondary",
+      "income": 180000,
+      "category": "SC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["haryana", "merit", "incentive", "scholarship"],
+    "test_type": "state_haryana"
+  },
+  {
+    "id": "Q23",
+    "question": "Central sector scholarship scheme for university and college students (CSSS)",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 450000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["central sector", "csss", "college", "university"],
+    "test_type": "central_sector"
+  },
+  {
+    "id": "Q24",
+    "question": "Skill development and vocational training stipend under PMKVY",
+    "profile": {
+      "state": "All India",
+      "education": "10th Pass / Secondary",
+      "income": null,
+      "category": "General",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["skill", "pmkvy", "vocational", "kaushal"],
+    "test_type": "skill_development"
+  },
+  {
+    "id": "Q25",
+    "question": "Scholarship for children of beedi, cine and mining workers",
+    "profile": {
+      "state": "All India",
+      "education": "12th Pass / Higher Secondary",
+      "income": 120000,
+      "category": "General",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": true,
+      "disability": false
+    },
+    "expected_keywords": ["beedi", "labour", "welfare", "worker"],
+    "test_type": "labour_welfare"
+  },
+  {
+    "id": "Q26",
+    "question": "Begum Hazrat Mahal national scholarship for minority girl students",
+    "profile": {
+      "state": "All India",
+      "education": "10th Pass / Secondary",
+      "income": 200000,
+      "category": "Minority",
+      "gender": "female",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["begum hazrat", "minority", "girl", "maulana"],
+    "test_type": "minority_girls"
+  },
+  {
+    "id": "Q27",
+    "question": "Odisha state post matric scholarship through state scholarship portal",
+    "profile": {
+      "state": "Odisha",
+      "education": "Graduation / Undergraduate",
+      "income": 200000,
+      "category": "ST",
+      "gender": "all",
+      "residence": "rural",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["odisha", "prerana", "scholarship", "post-matric"],
+    "test_type": "state_odisha"
+  },
+  {
+    "id": "Q28",
+    "question": "National fellowship for Scheduled Caste students pursuing MPhil and PhD",
+    "profile": {
+      "state": "All India",
+      "education": "PhD / Research",
+      "income": null,
+      "category": "SC",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["national fellowship", "sc", "mphil", "phd"],
+    "test_type": "sc_fellowship"
+  },
+  {
+    "id": "Q29",
+    "question": "Assistance for single girl child pursuing postgraduate degree (Indira Gandhi PG scholarship)",
+    "profile": {
+      "state": "All India",
+      "education": "Post-Graduation",
+      "income": null,
+      "category": "General",
+      "gender": "female",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["single girl", "indira gandhi", "ugc", "post-graduate"],
+    "test_type": "single_girl_child"
+  },
+  {
+    "id": "Q30",
+    "question": "Scholarship for medical, MBBS and nursing students in India",
+    "profile": {
+      "state": "All India",
+      "education": "Graduation / Undergraduate",
+      "income": 250000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["medical", "health", "scholarship", "mbbs"],
+    "test_type": "medical_education"
+  },
+  {
+    "id": "Q31",
+    "question": "Welfare and education grant for children of sanitation workers and manual scavengers",
+    "profile": {
+      "state": "All India",
+      "education": "10th Pass / Secondary",
+      "income": 100000,
+      "category": "SC",
+      "gender": "all",
+      "residence": "urban",
+      "bpl": true,
+      "disability": false
+    },
+    "expected_keywords": ["sanitation", "scavenger", "safai", "welfare"],
+    "test_type": "sanitation_workers"
+  },
+  {
+    "id": "Q32",
+    "question": "Goa state scholarship for higher secondary and undergraduate students",
+    "profile": {
+      "state": "Goa",
+      "education": "Graduation / Undergraduate",
+      "income": 300000,
+      "category": "General",
+      "gender": "all",
+      "residence": "both",
+      "bpl": false,
+      "disability": false
+    },
+    "expected_keywords": ["goa", "scholarship", "higher education"],
+    "test_type": "state_goa"
+  }
+]
+
